@@ -7,7 +7,7 @@ SELECT e.name AS Ename, e2.name AS Boss,
 e.salary AS Esalary, e2.salary AS Bsalary
 FROM employees e
 JOIN employees e2 ON e.boss_id = e2.employee_id
-WHERE e.salary  > e2.salary 
+WHERE e.salary  > e2.salary ;
 
 --List employees who have the biggest salary IN their departments
 WITH TEM AS (
@@ -30,7 +30,7 @@ SELECT A.* , B.Salary , b.department_id
 FROM EMPLOYEES A LEFT  JOIN EMPLOYEES B
 ON A.BOSS_ID = B.EMPLOYEE_ID
 WHERE a.department_id != b.department_id
-ORDER BY 1
+ORDER BY 1;
 
 --List all departments along with the total salary there
 WITH TEM AS (
@@ -40,7 +40,7 @@ ON A.department_id = B.department_id )
 SELECT Dname, SUM(salary) 
 FROM TEM
 GROUP BY Dname 
-ORDER BY 1
+ORDER BY 1 ;
 
 
 
